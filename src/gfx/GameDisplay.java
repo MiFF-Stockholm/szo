@@ -4,21 +4,26 @@ import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
-import static org.lwjgl.opengl.GL11.*;
+import org.lwjgl.opengl.GL11;
 
 public class GameDisplay {
 
 	public static void initGL() {
-		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+		// glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
 
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();
-		glViewport(0, 0, Display.getDisplayMode().getWidth(), Display.getDisplayMode().getHeight());
-		glOrtho(0.0f, Display.getDisplayMode().getWidth(), Display.getDisplayMode().getHeight(), 0.0f, -1.0, 1.0);
+		// glMatrixMode(GL_MODELVIEW);
+		GL11.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-		glEnable(GL_TEXTURE_2D);
-		glEnable(GL_ALPHA_TEST);
-		glAlphaFunc(GL_GREATER, 0.1f);
+		GL11.glMatrixMode(GL11.GL_MODELVIEW);
+		GL11.glLoadIdentity();
+		GL11.glViewport(0, 0, Display.getDisplayMode().getWidth(), Display
+				.getDisplayMode().getHeight());
+		GL11.glOrtho(0.0f, Display.getDisplayMode().getWidth(), Display
+				.getDisplayMode().getHeight(), 0.0f, -1.0, 1.0);
+
+		GL11.glEnable(GL11.GL_TEXTURE_2D);
+		GL11.glEnable(GL11.GL_ALPHA_TEST);
+		GL11.glAlphaFunc(GL11.GL_GREATER, 0.1f);
 	}
 
 	public static void initscr(int targetWidth, int targetHeight,

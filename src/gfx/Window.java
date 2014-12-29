@@ -1,8 +1,8 @@
 package gfx;
 
 public class Window {
-	public final static int scrWidth = 800;
-	public final static int scrHeight = 600;
+	public final static int scrWidth = 1024;
+	public final static int scrHeight = 768;
 	public final static boolean fullscreen = false;
 
 	public static void CreateWindow() {
